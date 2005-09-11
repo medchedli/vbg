@@ -1,0 +1,15 @@
+#! /bin/sh -e
+
+if [ "$1" = configure ] && dpkg --compare-versions "$2" lt 0; then
+  echo ""
+  echo "An invocation of vrms has been added to the set of cron jobs run on a"
+  echo "monthly basis, so that you will get a periodic reminder of non-free"
+  echo "packages which are installed on your system.  Here is the current list:"
+  echo ""
+
+  /usr/bin/vrms
+fi
+
+#DEBHELPER#
+
+exit 0

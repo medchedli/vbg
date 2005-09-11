@@ -1,0 +1,52 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+build: build-stamp
+build-stamp:
+	dh_testdir
+	touch build-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp install-stamp
+	dh_clean
+
+install: install-stamp
+install-stamp: build-stamp
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+	install -o root -g root -m 0755 vrms `pwd`/debian/tmp/usr/bin/vrms
+	install -o root -g root -m 0644 reasons/vrms `pwd`/debian/tmp/usr/share/vrms/reasons/vrms
+	touch install-stamp
+
+binary-indep: build install
+
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installdocs
+	dh_installexamples
+	dh_installmenu
+	dh_installcron
+	dh_installman vrms.1
+	dh_installchangelogs 
+	dh_link
+	dh_strip
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+source diff:                                                                  
+	@echo >&2 'source and diff are obsolete - use dpkg-source -b'; false
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary

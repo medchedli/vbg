@@ -1,0 +1,117 @@
+vrms (1.9-0.1) unstable; urgency=low
+
+  [ Rogério Brito ]
+  * NMU to fix some trivial changes.
+  * vmrs: Minimal update to fix the "(pur)" problem. Closes: #252146.
+  * vrms.1: Spelling fixes. Closes: #306734.
+  * vrms.1: Fix manpage for --sparse option. Closes: #211988.
+  * vrms.1: Remove HTML-entities from the manpage. Closes: #274296.
+  * debian/rules: change dh_installmanpages to (newer) dh_installman.
+  * debian/control: upgraded to standards 3.6.1. Closes: 302504.
+  * debian/control: changed short description to start with lowcase.
+  * This package is now lintian-clean.
+
+  [ Joey Hess ]
+  * Reviewed and sponsored this release.
+  * Increase standards-version to 2.6.2 (no changes).
+  * graphviz and autobook are now free, remove them from the reasons file.
+    Closes: #158702
+
+ -- Joey Hess <joeyh@debian.org>  Wed, 24 Aug 2005 16:35:29 -0400
+
+vrms (1.9) unstable; urgency=low
+
+  * fix spelling error, closes: #155201, #155549
+  * "he who does all the work should be the maintainer of record..." -- Bdale
+
+ -- Bdale Garbee <bdale@gag.com>  Mon,  5 Aug 2002 20:57:38 -0600
+
+vrms (1.8) unstable; urgency=low
+
+  * Verified outstanding NMU's 
+     (Closes: #88082, #55443, #57926, #79748, #82721, #99485, #121215)
+  * Added light weight statistics (Closes: #32368)
+  * Added detect and report of badly formed entries in status file
+     (when affects vrms ability) (Closes: #32517)
+  * Verified that curent code fixes existing bugs
+     (Closes: #53155, #57693, #57766, #78633, #84280, #148106)
+  * Applied patch adding display options and built-in help, updated manpage,
+     added Reason display (Closes: bug#146782)
+  * Bdale added Stephen as an authorized uploader
+
+ -- Stephen M Moraco <stephen@debian.org>  Wed,  3 Jul 2002 20:10:02 -0600
+
+vrms (1.7) unstable; urgency=low
+
+  * new (return of the original) maintainer, closes: #141228, #90183
+  * cosmetic update of rules file, etc
+  * lintian clean
+
+ -- Bdale Garbee <bdale@gag.com>  Thu,  4 Apr 2002 17:14:57 -0700
+
+vrms (1.6.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * debian/cron.monthly: Exit quietly if /usr/bin/vrms doesn't exist
+    (closes: #99485, #121215).
+  * vrms: Change some regex matches to equality tests to avoid
+    'not-installed' matching 'installed' and showing some purged packages
+    (closes: #57926).
+  * debian/control: Use Build-Depends-Indep rather than Build-Depends.
+  * Remove per-user Emacs local variables from this changelog.
+
+ -- Colin Watson <cjwatson@debian.org>  Tue, 27 Nov 2001 11:10:04 +0000
+
+vrms (1.6.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Standards-Version: 3.5.2 (closes: #82721):
+    - Build dependencies.
+    - Added debhelper token to postinst so that the /usr/doc link gets
+      created.
+  * Removed spurious man page in /usr/man left over from FHS updates
+    (closes: #55443).
+  * Removed dh_make templates debian/init.d.ex and debian/menu.ex.
+  * Corrected path to GPL in copyright file (closes: #79748).
+  * Removed obsolete dh_suidregister call from debian/rules.
+  * Run postinst with 'set -e'.
+  * Mark /etc/cron.monthly/vrms as a conffile (closes: #88082, part 1).
+  * Run vrms in the postinst only on an initial install (closes: #88082,
+    part 2).
+
+ -- Colin Watson <cjwatson@debian.org>  Sat, 17 Mar 2001 01:13:14 +0000
+
+vrms (1.6) unstable; urgency=low
+  * Fixed case where vrms missed packages in section non-us/non-free.
+   
+ -- Bill Geddes <geddes@debian.org>  Thu, 16 Dec 1999 16:08:45 -0700
+
+vrms (1.4) unstable; urgency=low
+  * Fixed bug 32622 - hang on package w/no description.
+   
+ -- Bill Geddes <geddes@debian.org>  Thu, 18 Feb 1999 07:17:51 -0700
+
+vrms (1.3) unstable; urgency=low
+  * Fixed bug 32394 - unnecessary dependency - an oversight.
+  * Re-worded some language in control file.
+   
+ -- Bill Geddes <geddes@debian.org>  Thu, 28 Jan 1999 14:02:55 -0700
+
+vrms (1.2) unstable; urgency=low
+  * Fixed bug - did not find all non-free packages.
+  * Eliminate execution of 'dpkg -l'.
+   
+ -- Bill Geddes <geddes@debian.org>  Mon, 25 Jan 1999 14:23:45 -0700
+
+vrms (1.1) unstable; urgency=low
+
+  * New Maintainer.
+  * Now accounts for partially installed packages, closes #32380
+   
+ -- Bill Geddes <geddes@debian.org>  Mon, 25 Jan 1999 14:23:45 -0700
+
+vrms (1.0) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Bdale Garbee <bdale@gag.com>  Tue, 19 Jan 1999 23:16:27 -0700

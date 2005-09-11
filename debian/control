@@ -1,0 +1,19 @@
+Source: vrms
+Section: admin
+Priority: optional
+Maintainer: Stephen M Moraco <stephen@debian.org>
+Standards-Version: 3.6.2
+Build-Depends-Indep: debhelper (>= 2.0.40)
+Uploaders: Bdale Garbee <bdale@gag.com>
+
+Package: vrms
+Architecture: all
+Description: virtual Richard M. Stallman
+ The vrms program will analyze the set of currently-installed packages on a
+ Debian GNU/Linux system, and report all of the packages from the non-free
+ tree which are currently installed.
+ .
+ Future versions of vrms will include an option to also display text from the
+ public writings of RMS and others that explain why use of each of the 
+ installed non-free packages might cause moral issues for some in the Free
+ Software community.  This functionality is not yet included.

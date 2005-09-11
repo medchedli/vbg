@@ -1,0 +1,55 @@
+.TH VRMS 1 "A Cute Little Hack" \" -*- nroff -*-
+.SH NAME
+vrms \- report of installed non-free software
+.SH SYNOPSIS
+.B vrms
+[\fIOPTION\fR] ...
+.SH DESCRIPTION
+This program is an attempt at creating a "virtual Richard M. Stallman" for
+Debian GNU/Linux.
+.PP
+This program analyzes the currently-installed package list on a Debian 
+GNU/Linux system, and reports the non-free packages that are currently 
+installed to stdout.
+.PP
+The packages in the non-free tree have restrictions
+on their use and/or distribution which cause them to fail to meet the terms
+of the Debian Free Software Guidelines included as part of the Debian Social
+Contract.  However, some are sufficiently useful that their presence is often
+tolerated by Debian users despite their licensing.
+.PP
+Richard is the most vocal among us on the issue of software morality, and we
+agree with Richard that Debian users should have an easy way to know when they
+are running non-free software on their systems.  This program is our attempt
+to fill that need.
+.SH OPTIONS
+All options can be prefixed with \-\- (eg: \fB\-\-noexplain\fR) to turn them off.
+.TP
+\fB\-q\fR, \fB\-\-quiet\fR
+Do nothing if there are no non-free packages installed.
+.TP
+\fB\-e\fR, \fB\-\-explain\fR
+Give a brief explanation of why each package is non-free, if
+available. This is the default.
+.TP
+\fB\-s\fR, \fB\-\-sparse\fR
+Just output a list of non-free packages.
+.TP
+\fB\-\-reason\-dir\fR=\fIDIR\fR
+Use \fIDIR\fR as the reason directory, instead of
+/usr/share/vrms/reasons/.
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+Display help.
+.TP
+\fB\-d\fR, \fB\-\-debug\fR
+Generate debugging information.
+.SH FILES
+.TP
+.I /usr/share/vrms/reasons
+Default source of explanations for why packages are non-free.
+.SH HISTORY
+This program was written by Bdale Garbee and Bill Geddes for the Debian 
+GNU/Linux system, in response to an open discussion with Richard Stallman
+about the issues surrounding the availability/desirability of the 'non-free' 
+package tree in Debian.

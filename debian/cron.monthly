@@ -1,0 +1,5 @@
+#!/bin/sh
+
+[ -x /usr/bin/vrms ] || exit 0
+
+/usr/bin/vrms --quiet
