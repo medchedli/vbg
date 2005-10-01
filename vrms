@@ -1,26 +1,29 @@
 #!/usr/bin/perl
 
-use strict qw(vars subs refs);
+use strict;
+use diagnostics;
+use warnings;
 
 use Getopt::Long;
 
-$^W = 1;	### enable warning from here on
-
+# Declaration of important/main variables.
 my $quiet = 0;
 my $sparse = 0;
 my $help = 0;
 my $explain = 1;
 my $debug = 0;
 my $reasondir = '/usr/share/vrms/reasons/';
+my %reason = ();
 
-GetOptions('q|quiet' => \$quiet,
-	   's|sparse' => \$sparse,
-	   'e|explain!' => \$explain,
-	   'reason-dir=s' => \$reasondir,
-	   'd|debug+' => \$debug,
-	   'h|help' => \$help);
 
-if ($help) {
+#
+# Auxiliary functions section (FIXME: put them in a file by themselves).
+#
+
+# sub usage:
+# Input: nothing.
+# Output: Messages to stdout telling the usage of the program.
+sub usage() {
     print <<EOF;
 Usage: vrms [OPTIONS] ...
 
@@ -34,11 +37,12 @@ Usage: vrms [OPTIONS] ...
 
 All options can be prefixed with "no" (eg: --noexplain) to turn them off.
 EOF
-    exit 0;
 }
 
-my %reason = ();
-
+# sub parse_reason_file:
+# Input: list of reason files
+# Output: the hash %reason filled with reasons
+# (FIXME: %reason shouldn't be global)
 sub parse_reason_file {
     my $file = shift;
     print "Parsing reason file $file\n" if $debug >= 1;
@@ -60,6 +64,21 @@ sub parse_reason_file {
     
     close REASON or
 	die "Can't close FILE [$file]: $!\n";
+}
+
+#
+# Main program starts here.
+#
+GetOptions('q|quiet' => \$quiet,
+	   's|sparse' => \$sparse,
+	   'e|explain!' => \$explain,
+	   'reason-dir=s' => \$reasondir,
+	   'd|debug+' => \$debug,
+	   'h|help' => \$help);
+
+if ($help) {
+    usage();
+    exit 0;
 }
 
 opendir(REASONDIR, $reasondir) or
@@ -169,7 +188,7 @@ while(<PKG_SOURCE>) {
 	}
 	if (!$has_section or !$has_status or !$has_pkg) {
 	    print STDERR "vrms: ERROR- Badly formed dpkg-status entry #$clumpcnt!\n";
-		print STDERR "             pkg=[$pkg], pkgstatus=[$pkgstatus], section=[$section] \n";
+	    print STDERR "             pkg=[$pkg], pkgstatus=[$pkgstatus], section=[$section] \n";
 	}
     } else {
 	###  Entries which are 2 or 4 lines are not-installed 

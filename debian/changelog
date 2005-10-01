@@ -1,3 +1,11 @@
+vrms (1.9-0.2) unstable; urgency=low
+
+  * Just a cleanup pass on the package.
+    This is unreleased, but maybe it should be, to finally acknowledge
+    the previous NMU.
+
+ -- Rogério Brito <rbrito@users.sf.net>  Sat,  1 Oct 2005 19:27:18 -0300
+
 vrms (1.9-0.1) unstable; urgency=low
 
   [ Rogério Brito ]
