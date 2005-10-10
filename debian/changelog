@@ -1,8 +1,9 @@
 vrms (1.9-0.2) unstable; urgency=low
 
-  * Just a cleanup pass on the package.
-    This is unreleased, but maybe it should be, to finally acknowledge
-    the previous NMU.
+  * Unreleased, but should be, to finally acknowledge the previous NMU.
+  * debian/rules: put DH_COMPAT=4, just to be up-to-date with debhelper;
+  * debian/rules: fix installation of executable and manpage;
+  * debian/rules: eliminated some unnecessary use of dh_* scripts.
 
  -- Rogério Brito <rbrito@users.sf.net>  Sat,  1 Oct 2005 19:27:18 -0300
 
