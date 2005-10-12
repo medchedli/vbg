@@ -1,11 +1,16 @@
-vrms (1.9-0.2) unstable; urgency=low
+vrms (1.10) UNRELEASED; urgency=low
 
-  * Unreleased, but should be, to finally acknowledge the previous NMU.
+  [ Bdale Garbee ]
+  * create debian/compat instead of using DH_COMPAT in rules file
+  * more entries for reasons file from Sebastian Rittau, closes: #174520
+  * update control file to reflect move to team maintainership
+
+  [ Rogério Brito ]
   * debian/rules: put DH_COMPAT=4, just to be up-to-date with debhelper;
   * debian/rules: fix installation of executable and manpage;
   * debian/rules: eliminated some unnecessary use of dh_* scripts.
 
- -- Rogério Brito <rbrito@users.sf.net>  Sat,  1 Oct 2005 19:27:18 -0300
+ -- Bdale Garbee <bdale@gag.com>  Tue, 11 Oct 2005 14:58:31 -0600
 
 vrms (1.9-0.1) unstable; urgency=low
 

@@ -1,10 +1,10 @@
 Source: vrms
 Section: admin
 Priority: optional
-Maintainer: Stephen M Moraco <stephen@debian.org>
-Standards-Version: 3.6.2
+Maintainer: Debian vrms Maintainers <debian-vrms@lists.gag.com>
+Standards-Version: 3.6.2.1
 Build-Depends-Indep: debhelper (>= 2.0.40)
-Uploaders: Bdale Garbee <bdale@gag.com>
+Uploaders: Bdale Garbee <bdale@gag.com>, Stephen Moraco <stephen@debian.org>
 
 Package: vrms
 Architecture: all

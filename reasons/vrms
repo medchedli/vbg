@@ -1,2 +1,39 @@
-snes9x-common: No commercial use
+angband: No commercial distribution
+autobook: Texinfo source not provided, only HTML
+blender: No commercial distribution, no source code available
+doc-html-w3: No modifications or derivatives allowed
 font3d: No commercial use
+graphviz: License questionable
+gimp1.2-nonfree: (US only) Includes patent-encumbered algorithms
+gimp1.3-nonfree: (US only) Includes patent-encumbered algorithms
+gsfonts-other: Partly no modifications allowed, partly shareware
+gsn-curses: No modifications allowed
+gsn-jigsaw: No modifications allowed
+hwb: No modifications allowed
+jdk1.1: Proprietary license
+lha: No modifications allowed, non-network distributions problematic
+mcvert: No commercial distribution
+mpg123: No commercial distribution or use, no modifications allowed
+mpg123-esd: No commercial distribution or use, no modifications allowed
+mpg123-nas: No commercial distribution or use, no modifications allowed
+mpg123-oss-3dnow: No commercial distribution or use, no modifications allowed
+mpg123-oss-i486: No commercial distribution or use, no modifications allowed
+nvidia-glx: Proprietary license
+nvidia-glx-dev: Proprietary license
+povray: Distribution limitations, modifications limited
+povray-doc: Distribution limitations, modifications limited
+povray-misc: Distribution limitations, modifications limited
+snes9x-common: No commercial use
+snes9x-fx: No commercial use
+snes9x-opengl: No commercial use
+smes9x-svga: No commercial use
+snes9x-x: No commercial use
+unrar: Modifications problematic
+xanim: No commercial distribution
+xanim-modules: Highly restricting license terms
+xfonts-scalable-nonfree: No modifications allowed
+xmame: Distribution limitations, no commercial use
+xmame-fx: Distribution limitations, no commercial use
+xmame-gl: Distribution limitations, no commercial use
+xmame-svga: Distribution limitations, no commercial use
+xmame-x: Distribution limitations, no commercial use
