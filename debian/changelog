@@ -1,4 +1,4 @@
-vrms (1.10) UNRELEASED; urgency=low
+vrms (1.10) unstable; urgency=low
 
   [ Bdale Garbee ]
   * create debian/compat instead of using DH_COMPAT in rules file
@@ -10,7 +10,7 @@ vrms (1.10) UNRELEASED; urgency=low
   * debian/rules: fix installation of executable and manpage;
   * debian/rules: eliminated some unnecessary use of dh_* scripts.
 
- -- Bdale Garbee <bdale@gag.com>  Tue, 11 Oct 2005 14:58:31 -0600
+ -- Bdale Garbee <bdale@gag.com>  Tue, 11 Oct 2005 19:41:10 -0600
 
 vrms (1.9-0.1) unstable; urgency=low
 
