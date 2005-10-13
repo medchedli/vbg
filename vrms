@@ -40,8 +40,8 @@ EOF
 }
 
 # sub parse_reason_file:
-# Input: list of reason files
-# Output: the hash %reason filled with reasons
+# Input: the name of a reason file and the global hash %reason
+# Output: the hash %reason filled with reasons from the input file
 # (FIXME: %reason shouldn't be global)
 sub parse_reason_file {
     my $file = shift;
