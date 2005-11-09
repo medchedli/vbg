@@ -1,9 +1,13 @@
-vrms (1.11) UNRELEASED; urgency=low
+vrms (1.11) UNRELEASED; urgency=high
 
+  * Urgency high because it fixes an RC bug;
   * Acknowledge the NMU made earlier;
   * Closes: #252146, #306734, #211988, #274296, #302504, #158702;
-  * Forgot to mention minor fixes of vrms in the previous version.
-
+  * Forgot to mention minor fixes of vrms in the previous version;
+  * debian/control: updated buid-dependency to debhelper (>= 4.0.0);
+  * debian/control: for "use diagnostics", include perl as a dependency
+    (Closes: #338243);
+	
  -- Rogério Brito <rbrito@users.sf.net>  Thu, 13 Oct 2005 02:45:39 -0300
 
 vrms (1.10) unstable; urgency=low

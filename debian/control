@@ -3,11 +3,12 @@ Section: admin
 Priority: optional
 Maintainer: Debian vrms Maintainers <debian-vrms@lists.gag.com>
 Standards-Version: 3.6.2.1
-Build-Depends-Indep: debhelper (>= 2.0.40)
+Build-Depends-Indep: debhelper (>= 4.0.0)
 Uploaders: Bdale Garbee <bdale@gag.com>, Stephen Moraco <stephen@debian.org>
 
 Package: vrms
 Architecture: all
+Depends: perl
 Description: virtual Richard M. Stallman
  The vrms program will analyze the set of currently-installed packages on a
  Debian GNU/Linux system, and report all of the packages from the non-free
