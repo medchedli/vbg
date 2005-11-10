@@ -8,13 +8,13 @@ Uploaders: Bdale Garbee <bdale@gag.com>, Stephen Moraco <stephen@debian.org>
 
 Package: vrms
 Architecture: all
-Depends: perl
+Depends: perl-modules
 Description: virtual Richard M. Stallman
  The vrms program will analyze the set of currently-installed packages on a
  Debian GNU/Linux system, and report all of the packages from the non-free
  tree which are currently installed.
  .
- Future versions of vrms will include an option to also display text from the
- public writings of RMS and others that explain why use of each of the 
+ Future versions of vrms will include an option to also display text from
+ the public writings of RMS and others that explain why use of each of the
  installed non-free packages might cause moral issues for some in the Free
  Software community.  This functionality is not yet included.

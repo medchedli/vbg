@@ -1,12 +1,14 @@
 vrms (1.11) UNRELEASED; urgency=high
 
-  * Urgency high because it fixes an RC bug;
-  * Acknowledge the NMU made earlier;
-  * Closes: #252146, #306734, #211988, #274296, #302504, #158702;
+  * Urgency high because it fixes an RC bug:
+     - debian/control: for "use diagnostics", include perl-modules as a
+       dependency (Closes: #338243);
+  * Acknowledge the previous NMU:
+    Closes: #252146, #306734, #211988, #274296, #302504, #158702;
   * Forgot to mention minor fixes of vrms in the previous version;
-  * debian/control: updated buid-dependency to debhelper (>= 4.0.0);
-  * debian/control: for "use diagnostics", include perl as a dependency
-    (Closes: #338243);
+  * debian/control: updated build-dependency to debhelper (>= 4.0.0);
+  * debian/control: cosmetic change to long description;
+  * Gave this changelog a proper facelift (thanks to Lionel Elie Mamane).
 	
  -- Rogério Brito <rbrito@users.sf.net>  Thu, 13 Oct 2005 02:45:39 -0300
 
