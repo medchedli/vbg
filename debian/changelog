@@ -1,5 +1,6 @@
-vrms (1.11) unstable; urgency=high
+vrms (1.11) UNRELEASED; urgency=high
 
+  [ Rogério Brito ]
   * Urgency high because it fixes an RC bug:
      - debian/control: for "use diagnostics", include perl-modules as a
        dependency (Closes: #338243);
