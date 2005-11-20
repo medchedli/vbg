@@ -11,7 +11,7 @@ vrms (1.11) UNRELEASED; urgency=high
   * debian/control: cosmetic change to long description;
   * Gave this changelog a proper facelift (thanks: Lionel Elie Mamane);
   * Incorporated a slightly modified version Ubuntu's patch for checking
-	for non-free packages (thanks: Martin Meredith).
+    for non-free packages (thanks: Martin Meredith).
 	
  -- Rogério Brito <rbrito@users.sf.net>  Thu, 13 Oct 2005 02:45:39 -0300
 
