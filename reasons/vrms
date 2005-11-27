@@ -27,6 +27,12 @@ snes9x-common: No commercial use
 snes9x-fx: No commercial use
 snes9x-opengl: No commercial use
 snes9x-x: No commercial use
+sun-j2re1.3: Proprietary licence, no source available
+sun-j2re1.4: Proprietary licence, no source available
+sun-j2re1.5: Proprietary licence, no source available
+sun-j2sdk1.3: Proprietary licence, no source available
+sun-j2sdk1.4: Proprietary licence, no source available
+sun-j2sdk1.5: Proprietary licence, no source available
 unrar: Modifications problematic
 xanim-modules: Highly restricting license terms
 xanim: No commercial distribution
