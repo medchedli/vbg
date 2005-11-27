@@ -22,10 +22,10 @@ nvidia-glx: Proprietary license
 povray-doc: Distribution limitations, modifications limited
 povray-misc: Distribution limitations, modifications limited
 povray: Distribution limitations, modifications limited
-smes9x-svga: No commercial use
 snes9x-common: No commercial use
 snes9x-fx: No commercial use
 snes9x-opengl: No commercial use
+snes9x-svga: No commercial use
 snes9x-x: No commercial use
 sun-j2re1.3: Proprietary licence, no source available
 sun-j2re1.4: Proprietary licence, no source available
