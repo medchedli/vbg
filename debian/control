@@ -3,7 +3,7 @@ Section: admin
 Priority: optional
 Maintainer: Debian vrms Maintainers <debian-vrms@lists.gag.com>
 Standards-Version: 3.6.2.1
-Build-Depends-Indep: debhelper (>= 4.0.0)
+Build-Depends-Indep: debhelper (>> 5)
 Uploaders: Bdale Garbee <bdale@gag.com>, Stephen Moraco <stephen@debian.org>
 
 Package: vrms

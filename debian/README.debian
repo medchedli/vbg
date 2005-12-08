@@ -2,7 +2,9 @@ This program was written specifically for Debian by Bill Geddes and Bdale
 Garbee in January of 1999.  The effort resulted from a series of discussions
 with Richard M. Stallman about the problem posed by the existence of the
 non-free tree on many Debian FTP sites to users who wish to run a system of
-entirely free (aka Open Source) software.
+entirely Free Software.  The goal is to make it easy for a Debian user to
+know what non-free software is currently installed on their system so that
+they can make conscious decisions about what software to use.
 
 Things that are on our wish list:
 
@@ -18,8 +20,6 @@ Things that are on our wish list:
 	  if any, may have led to the installation of each non-free package.
 
 Feel free to let us know if you have any other good ideas!  The best way to do
-so would be to file a bug against package 'vrms' in the Debian Bug Tracking
-System.
+so would be to file a wishlist bug against package 'vrms' in the Debian Bug 
+Tracking System.
 
-It has been updated on 2005-05-28 by Rogério Brito to fix some (really)
-trivial/janitorial bugs.
