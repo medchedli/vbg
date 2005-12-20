@@ -1,3 +1,10 @@
+vrms (1.12) UNRELEASED; urgency=low
+
+  [ Rogério Brito ]
+  * With the last updates, it seems that bug 298147 got fixed. Closes: #298147;
+
+ -- Rogério Brito <rbrito@users.sf.net>  Tue, 20 Dec 2005 00:25:40 -0200
+
 vrms (1.11) unstable; urgency=low
 
   [ Bdale Garbee ]
