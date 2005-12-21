@@ -2,7 +2,14 @@ vrms (1.12) UNRELEASED; urgency=low
 
   [ Rogério Brito ]
   * With the last updates, it seems that bug 298147 got fixed. Closes: #298147;
-
+  * debian/control: include dependency on debconf;
+  * debian/postinst: modify the script for debconf;
+  * debian/rules: use the debhelper script for using debconf;
+  * debian/config: configuration script for debconf;
+  * debian/templates: introduce templates for debconf;
+  * debian/templates: use of debconf-textintroduce the templates for debconf;
+  * debian/po: Initial use of i18n with debconf-gettextize.
+	
  -- Rogério Brito <rbrito@users.sf.net>  Tue, 20 Dec 2005 00:25:40 -0200
 
 vrms (1.11) unstable; urgency=low

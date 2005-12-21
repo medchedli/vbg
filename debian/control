@@ -8,7 +8,7 @@ Uploaders: Bdale Garbee <bdale@gag.com>, Stephen Moraco <stephen@debian.org>
 
 Package: vrms
 Architecture: all
-Depends: perl-modules
+Depends: perl-modules, debconf | debconf-2.0
 Description: virtual Richard M. Stallman
  The vrms program will analyze the set of currently-installed packages on a
  Debian GNU/Linux system, and report all of the packages from the non-free
