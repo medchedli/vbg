@@ -2,7 +2,12 @@ vrms (1.12) UNRELEASED; urgency=low
 
   [ Rogério Brito ]
   * With the last updates, it seems that bug 298147 got fixed. Closes: #298147;
+  * vrms: include preamble with copyright, so that we use the best-current practices;
+  * debian/copyright: include the years of copyright the authors;
+  * debian/copyright: mention my changes in vrms;
   * debian/control: include dependency on debconf;
+  * debian/control: make debhelper a build-depends, not build-depends-indep;
+  * debian/control: mention that vrms is not limited to Debian, nor to Linux;
   * debian/postinst: modify the script for debconf;
   * debian/rules: use the debhelper script for using debconf;
   * debian/config: configuration script for debconf;

@@ -3,18 +3,22 @@ Section: admin
 Priority: optional
 Maintainer: Debian vrms Maintainers <debian-vrms@lists.gag.com>
 Standards-Version: 3.6.2.1
-Build-Depends-Indep: debhelper (>> 5)
+Build-Depends: debhelper (>> 5)
 Uploaders: Bdale Garbee <bdale@gag.com>, Stephen Moraco <stephen@debian.org>
 
 Package: vrms
 Architecture: all
 Depends: perl-modules, debconf | debconf-2.0
 Description: virtual Richard M. Stallman
- The vrms program will analyze the set of currently-installed packages on a
- Debian GNU/Linux system, and report all of the packages from the non-free
- tree which are currently installed.
+ The vrms program will analyze the set of currently-installed packages
+ on a Debian-based system, and report all of the packages from the
+ non-free tree which are currently installed.
  .
- Future versions of vrms will include an option to also display text from
- the public writings of RMS and others that explain why use of each of the
- installed non-free packages might cause moral issues for some in the Free
- Software community.  This functionality is not yet included.
+ Note that vrms is not limited to Debian systems only (which means that
+ it also works with Debian-derived distributions such as Ubuntu). It is
+ also not limited to Linux-based systems.
+ .
+ Future versions of vrms will include an option to also display text
+ from the public writings of RMS and others that explain why use of each
+ of the installed non-free packages might cause moral issues for some in
+ the Free Software community.  This functionality is not yet included.
