@@ -1,4 +1,4 @@
-vrms (1.12) UNRELEASED; urgency=low
+vrms (1.12) unstable; urgency=low
 
   [ Rogério Brito ]
   * With the last updates, it seems that bug 298147 got fixed. Closes: #298147;
@@ -8,6 +8,7 @@ vrms (1.12) UNRELEASED; urgency=low
   * debian/control: include dependency on debconf;
   * debian/control: make debhelper a build-depends, not build-depends-indep;
   * debian/control: mention that vrms is not limited to Debian, nor to Linux;
+  * debian/control: added myself (with Bdale's permission) as an uploader;
   * debian/postinst: modify the script for debconf;
   * debian/rules: use the debhelper script for using debconf;
   * debian/config: configuration script for debconf;
@@ -15,7 +16,7 @@ vrms (1.12) UNRELEASED; urgency=low
   * debian/templates: use of debconf-textintroduce the templates for debconf;
   * debian/po: Initial use of i18n with debconf-gettextize.
 	
- -- Rogério Brito <rbrito@users.sf.net>  Tue, 20 Dec 2005 00:25:40 -0200
+ -- Rogério Brito <rbrito@users.sf.net>  Fri,  3 Nov 2006 03:10:02 -0300
 
 vrms (1.11) unstable; urgency=low
 
