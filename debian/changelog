@@ -5,6 +5,7 @@ vrms (1.12) unstable; urgency=low
   * vrms: include preamble with copyright, so that we use the best-current practices;
   * debian/copyright: include the years of copyright the authors;
   * debian/copyright: mention my changes in vrms;
+  * debian/control: upgraded the Policy Standard to 3.7.2 (no changes required);
   * debian/control: include dependency on debconf;
   * debian/control: make debhelper a build-depends, not build-depends-indep;
   * debian/control: mention that vrms is not limited to Debian, nor to Linux;
