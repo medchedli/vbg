@@ -20,8 +20,8 @@ install-stamp: build-stamp
 	dh_testroot
 	dh_clean -k
 	dh_installdirs
-	install -o root -g root -m 0755 vrms `pwd`/debian/vrms/usr/bin/vrms
-	install -o root -g root -m 0644 reasons/vrms `pwd`/debian/vrms/usr/share/vrms/reasons/vrms
+	install -o root -g root -m 0755 vrms debian/vrms/usr/bin/vrms
+	install -o root -g root -m 0644 reasons/vrms debian/vrms/usr/share/vrms/reasons/vrms
 	touch install-stamp
 
 binary-indep: build install
