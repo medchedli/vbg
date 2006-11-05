@@ -3,6 +3,7 @@ vrms (1.12) unstable; urgency=low
   [ Rogério Brito ]
   * With the last updates, it seems that bug 298147 got fixed. Closes: #298147;
   * debian/README.Debian: renamed the old README.debian (Tks: Daniel Baumann);
+  * debian/README.Debian: removed spurious last empty line (Tks: Daniel Baumann);
   * debian/changelog: removed spurious tabs and spaces (Tks: Daniel Baumann);
   * debian/config: configuration script for debconf;
   * debian/control: added myself (with Bdale's permission) as an uploader;
@@ -13,10 +14,14 @@ vrms (1.12) unstable; urgency=low
   * debian/copyright: include the years of copyright the authors;
   * debian/copyright: mention my changes in vrms;
   * debian/copyright: removed spurious last empty line (Tks: Daniel Baumann);
+  * debian/dirs: removed, as install -D is sufficient (Tks: Daniel Baumann);
   * debian/po: Initial use of i18n with debconf-gettextize.
   * debian/postinst: modify the script for debconf;
   * debian/postinst: remove content superseded by debconf (Tks: Daniel Baumann);
   * debian/rules: remove `pwd` in calls to install (Tks: Daniel Baumann);
+  * debian/rules: remove use of dh_fixperms (Tks: Daniel Baumann);
+  * debian/rules: remove useless dh_installmenu (Tks: Daniel Baumann);
+  * debian/rules: removed build-stamp and install-stamp as suggested by Daniel Baumann;
   * debian/rules: use the debhelper script for using debconf;
   * debian/templates: introduce templates for debconf;
   * debian/templates: use of debconf-textintroduce the templates for debconf;

@@ -3,26 +3,19 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-build: build-stamp
-build-stamp:
-	dh_testdir
-	touch build-stamp
+build:
 
 clean:
 	dh_testdir
-	dh_testroot
-	rm -f build-stamp install-stamp
-	dh_clean
+	dh_testroot 
+	dh_clean build-stamp install-stamp
 
-install: install-stamp
-install-stamp: build-stamp
+install: build
 	dh_testdir
 	dh_testroot
 	dh_clean -k
-	dh_installdirs
-	install -o root -g root -m 0755 vrms debian/vrms/usr/bin/vrms
-	install -o root -g root -m 0644 reasons/vrms debian/vrms/usr/share/vrms/reasons/vrms
-	touch install-stamp
+	install -D -o root -g root -m 0755 vrms debian/vrms/usr/bin/vrms
+	install -D -o root -g root -m 0644 reasons/vrms debian/vrms/usr/share/vrms/reasons/vrms
 
 binary-indep: build install
 
@@ -30,14 +23,12 @@ binary-arch: build install
 	dh_testdir
 	dh_testroot
 	dh_installdocs
-	dh_installmenu
 	dh_installdebconf
 	dh_installcron
 	dh_installman vrms.1
 	dh_installchangelogs 
 	dh_link
 	dh_compress
-	dh_fixperms
 	dh_installdeb
 	dh_shlibdeps
 	dh_gencontrol
