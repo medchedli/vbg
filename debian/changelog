@@ -1,3 +1,27 @@
+vrms (1.13) UNRELEASED; urgency=low
+
+  [ Rogério Brito ]
+  * Acknowledge the NMU work done by Christian Perrier;
+  * debian/rules: change the rules so that the "arch: all" package is
+    built in the "binary-indep" target, which is more correct than in
+    the "binary-arch" target;
+  * debian/postinst: removed: it did nothing. Tks: Joey Hess (Closes: #419147);
+  * vrms: don't complain with packages missing Section field. Tks: Joey Hess (Closes: #161368);
+  * reasons/vrms: remove mpg123 entries. Tks: Daniel Kobras (Closes: #397445);
+  * reasons/vrms: include tango-icon-theme. Tks: Chris Lamb (Closes: #403752);
+
+ -- Rogério Brito <rbrito@users.sf.net>  Wed, 11 Jul 2007 18:35:39 -0300
+
+vrms (1.12-0.1) unstable; urgency=low
+
+  * Non-maintainer upload to fix a longstanding issue (abusive debconf note)
+  * Remove the superfluous debconf note. Closes: #397433
+  * This removes the need for debconf translations. Apologies to
+    translators for the extra useless work.
+    Closes: #398076, #399210, #404488
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 17 Jan 2007 22:49:41 +0100
+
 vrms (1.12) unstable; urgency=low
 
   [ Rogério Brito ]

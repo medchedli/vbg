@@ -196,7 +196,7 @@ while(<PKG_SOURCE>) {
 		}
 	    }
 	}
-	if (!$has_section or !$has_status or !$has_pkg) {
+	if (!$has_status or !$has_pkg) {
 	    print STDERR "vrms: ERROR- Badly formed dpkg-status entry #$clumpcnt!\n";
 	    print STDERR "             pkg=[$pkg], pkgstatus=[$pkgstatus], section=[$section] \n";
 	}

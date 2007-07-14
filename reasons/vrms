@@ -15,11 +15,6 @@ ibm-j2sdk1.5: Proprietary licence, no source available
 jdk1.1: Proprietary license
 lha: No modifications allowed, non-network distributions problematic
 mcvert: No commercial distribution
-mpg123: No commercial distribution or use, no modifications allowed
-mpg123-esd: No commercial distribution or use, no modifications allowed
-mpg123-nas: No commercial distribution or use, no modifications allowed
-mpg123-oss-3dnow: No commercial distribution or use, no modifications allowed
-mpg123-oss-i486: No commercial distribution or use, no modifications allowed
 nvidia-glx: Proprietary license
 nvidia-glx-dev: Proprietary license
 povray: Distribution limitations, modifications limited
@@ -36,6 +31,7 @@ sun-j2re1.5: Proprietary licence, no source available
 sun-j2sdk1.3: Proprietary licence, no source available
 sun-j2sdk1.4: Proprietary licence, no source available
 sun-j2sdk1.5: Proprietary licence, no source available
+tango-icon-theme: Creative Commons Attribution-ShareAlike 2.5 License
 unrar: Modifications problematic
 xanim: No commercial distribution
 xanim-modules: Highly restricting license terms

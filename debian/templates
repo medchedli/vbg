@@ -1,6 +1,0 @@
-Template: vrms/cron/invocation
-Type: text
-_Description: An invocation of vrms was added to your cron scripts.
- An invocation of vrms has been added to the set of cron jobs run on a
- monthly basis, so that you will get a periodic reminder of non-free
- packages which are installed on your system.
