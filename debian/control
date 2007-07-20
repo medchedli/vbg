@@ -5,7 +5,8 @@ Maintainer: Debian vrms Maintainers <debian-vrms@lists.gag.com>
 Standards-Version: 3.7.2
 Build-Depends: debhelper (>> 5)
 XS-Vcs-SVN: svn://svn.debian.org/vrms/
-Uploaders: Bdale Garbee <bdale@gag.com>, Stephen Moraco <stephen@debian.org>, Rogério Brito <rbrito@users.sf.net>
+XB-Homepage: http://vrms.alioth.debian.org/
+Uploaders: Bdale Garbee <bdale@gag.com>, Stephen Moraco <stephen@debian.org>, Rogério Brito <rbrito@ime.usp.br>
 
 Package: vrms
 Architecture: all

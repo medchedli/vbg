@@ -4,6 +4,8 @@ vrms (1.13) UNRELEASED; urgency=low
   * Acknowledge the NMU work done by Christian Perrier;
   * debian/control: removed "Depends:" field completely;
   * debian/control: added "XS-Vcs-SVN:" field for our repository;
+  * debian/control: added "XS-Homepage:" field for our homepage at alioth;
+  * debian/control: updated my e-mail address;
   * debian/postinst: removed: it did nothing. Tks: Joey Hess (Closes: #419147);
   * debian/rules: change the rules so that the "arch: all" package is
     built in the "binary-indep" target, which is more correct than in
