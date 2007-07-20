@@ -15,7 +15,7 @@ vrms (1.13) UNRELEASED; urgency=low
   * vrms: don't complain with packages missing Section field. Tks: Joey Hess (Closes: #161368);
   * vrms: removed dependency on diagnostics.pm;
 
- -- Rogério Brito <rbrito@users.sf.net>  Wed, 11 Jul 2007 18:35:39 -0300
+ -- Rogério Brito <rbrito@ime.usp.br>  Wed, 11 Jul 2007 18:35:39 -0300
 
 vrms (1.12-0.1) unstable; urgency=low
 
