@@ -1,4 +1,4 @@
-vrms (1.14) UNRELEASED; urgency=low
+vrms (1.14) unstable; urgency=low
 
   [ Bdale Garbee ]
   * merge patch from Robert Millan that includes contrib packages in the 
