@@ -5,18 +5,27 @@ vrms \- report of installed non-free software
 .B vrms
 [\fIOPTION\fR] ...
 .SH DESCRIPTION
-This program is an attempt at creating a "virtual Richard M. Stallman" for
-Debian GNU/Linux.
+This program began as an attempt to create a "virtual Richard M. Stallman" for
+Debian GNU/Linux.  Thus the choice of name.
 .PP
 This program analyzes the currently-installed package list on a Debian 
-GNU/Linux system, and reports the non-free packages that are currently 
-installed to stdout.
+GNU/Linux system, and reports the non-free and contrib packages that are 
+currently installed to stdout.
+In some cases, such as regarding documentation licensed under the GNU Free
+Documentation License with invariant sections, the opinions of Richard M. 
+Stallman and the Debian project have diverged since this program was 
+originally written.  In such cases, this program follows the definition of
+freedom embodied in the Debian Free Software Guidelines.
 .PP
 The packages in the non-free tree have restrictions
 on their use and/or distribution which cause them to fail to meet the terms
 of the Debian Free Software Guidelines included as part of the Debian Social
 Contract.  However, some are sufficiently useful that their presence is often
 tolerated by Debian users despite their licensing.
+.PP
+The packages in the contrib tree are themselves free software but have some
+dependency on non-free software for their use that make them worthy of 
+reporting so that their use can also be consciously considered.
 .PP
 Richard is the most vocal among us on the issue of software morality, and we
 agree with Richard that Debian users should have an easy way to know when they

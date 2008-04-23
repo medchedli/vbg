@@ -104,6 +104,10 @@ my $is_nonfree = 0;		###  preset none found, yet
 my %nonfree = ();
 my $is_other_nonfree = 0;	###  preset none found, yet
 my %other_nonfree = ();
+my $is_contrib = 0;		###  preset none found, yet
+my %contrib = ();
+my $is_other_contrib = 0;	###  preset none found, yet
+my %other_contrib = ();
 my %pkg_status = ();
 my $pkgcnt = 0;
 my $clumpcnt = 0;
@@ -163,7 +167,7 @@ while(<PKG_SOURCE>) {
 		($label, $section) = split(/:\s+/,$_,2);
 		print "\tsection=[$section]\n" if $debug >= 1;
 		$has_section = 1;	###  we have necessary section
-		if ($section =~ /non-free|restricted|multiverse/) {
+		if ($section =~ /contrib|non-free|restricted|multiverse/) {
 		    ###  read thru rest of array to find descr instead of waiting for it
 		    my $found_descr =0;
 		    while (! $found_descr) {
@@ -179,12 +183,22 @@ while(<PKG_SOURCE>) {
 			    $found_descr = 1;
 			}
 		    }
-		    if (lc $status eq 'installed') {
-			$is_nonfree = 1;
-			$nonfree{$pkg} = $shortdescr;
+		    if ($section =~ /contrib/) {
+			if (lc $status eq 'installed') {
+			    $is_contrib = 1;
+			    $contrib{$pkg} = $shortdescr;
+			} else {
+			    $is_other_contrib = 1;
+			    $other_contrib{$pkg} = $shortdescr;
+			}
 		    } else {
-			$is_other_nonfree = 1;
-			$other_nonfree{$pkg} = $shortdescr;
+			if (lc $status eq 'installed') {
+			    $is_nonfree = 1;
+			    $nonfree{$pkg} = $shortdescr;
+			} else {
+			    $is_other_nonfree = 1;
+			    $other_nonfree{$pkg} = $shortdescr;
+			}
 		    }
 		}
 		last;	### this is last desriptor of package we care about so end loop
@@ -229,7 +243,7 @@ if($is_nonfree) {
 	    print "$pkgname\n";
 	}
     } else {
-	$~ = "head";
+	$~ = "nonfree_head";
 	write ;
 	$~ = "nfp";
 	foreach $pkgname (sort keys(%nonfree) ) {
@@ -250,7 +264,7 @@ if($is_other_nonfree) {
 	    print "$pkgname\n";
 	}
     } else {
-	$~ = "partialhead";
+	$~ = "nonfree_partialhead";
 	write;
 	$~ = "pnf";
 	foreach $pkgname (sort keys(%other_nonfree)) {
@@ -262,26 +276,94 @@ if($is_other_nonfree) {
     }
 }
 
-if (!$quiet and $nfcnt == 0 and $pnfcnt == 0) {
-    print "No non-free packages installed on $sysname!  rms would be proud.\n";
-} elsif (!$quiet and !$sparse) {
-    my $total_nonfree = $nonfreecnt + $other_nonfreecnt;
-    my $total_installed = $pkgcnt;
-    my $percentage = $total_nonfree * 100 / $total_installed;
-    printf "\n  %d non-free packages, %2.1f%% of %d installed packages.\n", 
-    $total_nonfree, $percentage, $total_installed;
+my $cbcnt = 0;
+
+my $contribcnt = (keys %contrib);
+
+if($is_contrib) {
+    print "\n";
+    if($sparse) {
+	foreach $pkgname (sort keys (%contrib)) {
+	    $cbcnt++;
+	    print "$pkgname\n";
+	}
+    } else {
+	$~ = "contrib_head";
+	write ;
+	$~ = "cbp";
+	foreach $pkgname (sort keys(%contrib) ) {
+	    $cbcnt++;
+	    write ;
+	    print "  Reason: $reason{$pkgname}\n"
+		if (exists $reason{$pkgname} and $explain);
+	}
+    }
+}
+
+my $pcbcnt = 0;
+my $other_contribcnt = (keys %other_contrib);
+if($is_other_contrib) {
+    if($sparse) {
+	foreach $pkgname (sort keys(%other_contrib)) {
+	    $pcbcnt++;
+	    print "$pkgname\n";
+	}
+    } else {
+	$~ = "contrib_partialhead";
+	write;
+	$~ = "pcb";
+	foreach $pkgname (sort keys(%other_contrib)) {
+	    $pcbcnt++;
+	    write;
+	    print "  Reason: $reason{$pkgname}\n"
+		if (exists $reason{$pkgname} and $explain);
+	}
+    }
+}
+
+if (!$quiet and !$sparse) {
+    printf "\n";
+    if ($nfcnt != 0 or $pnfcnt != 0) {
+	my $total_nonfree = $nonfreecnt + $other_nonfreecnt;
+	my $total_installed = $pkgcnt;
+	my $percentage = $total_nonfree * 100 / $total_installed;
+	printf "  %d non-free packages, %2.1f%% of %d installed packages.\n", 
+	$total_nonfree, $percentage, $total_installed;
+    }
+    if ($cbcnt != 0 or $pcbcnt != 0) {
+	my $total_contrib = $contribcnt + $other_contribcnt;
+	my $total_installed = $pkgcnt;
+	my $percentage = $total_contrib * 100 / $total_installed;
+	printf "  %d contrib packages, %2.1f%% of %d installed packages.\n", 
+	$total_contrib, $percentage, $total_installed;
+    }
+}
+if (!$quiet and $nfcnt == 0 and $pnfcnt == 0 and $cbcnt == 0 and $pcbcnt == 0) {
+    print "No non-free or contrib packages installed on $sysname!  rms would be proud.\n"
 }
 
 
-format head =
+format nonfree_head =
 @||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 "Non-free packages installed on $sysname"
 
 .
-format partialhead =
+format nonfree_partialhead =
 
 @||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 "Non-free packages with status other than installed on $sysname"
+
+.
+
+format contrib_head =
+@||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+"Contrib packages installed on $sysname"
+
+.
+format contrib_partialhead =
+
+@||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+"Contrib packages with status other than installed on $sysname"
 
 .
 
@@ -293,5 +375,15 @@ $pkgname, $nonfree{$pkgname}
 format pnf =
 @<<<<<<<<<<<<<<<<<<<<<<<< @<@<<@< @<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 $pkgname, '(', $pkg_status{$pkgname},')', $other_nonfree{$pkgname}
+.
+
+format cbp =
+@<<<<<<<<<<<<<<<<<<<<<<<< @<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+$pkgname, $contrib{$pkgname}
+.
+
+format pcb =
+@<<<<<<<<<<<<<<<<<<<<<<<< @<@<<@< @<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+$pkgname, '(', $pkg_status{$pkgname},')', $other_contrib{$pkgname}
 .
 

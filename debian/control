@@ -6,20 +6,24 @@ Standards-Version: 3.7.2
 Build-Depends: debhelper (>> 5)
 XS-Vcs-SVN: svn://svn.debian.org/vrms/
 XB-Homepage: http://vrms.alioth.debian.org/
-Uploaders: Bdale Garbee <bdale@gag.com>, Stephen Moraco <stephen@debian.org>, Rogério Brito <rbrito@ime.usp.br>
+Uploaders: Bdale Garbee <bdale@gag.com>, Rogério Brito <rbrito@ime.usp.br>
 
 Package: vrms
 Architecture: all
 Description: virtual Richard M. Stallman
  The vrms program will analyze the set of currently-installed packages
  on a Debian-based system, and report all of the packages from the
- non-free tree which are currently installed.
+ non-free and contrib trees which are currently installed.
+ .
+ In some cases, the opinions of Richard M. Stallman and the Debian project
+ have diverged since this program was originally written.  In such cases, this
+ program follows the Debian Free Software Guidelines.
  .
  Note that vrms is not limited to Debian systems only (which means that
  it also works with Debian-derived distributions such as Ubuntu). It is
  also not limited to Linux-based systems.
  .
- Future versions of vrms will include an option to also display text
+ Future versions of vrms may include an option to also display text
  from the public writings of RMS and others that explain why use of each
  of the installed non-free packages might cause moral issues for some in
  the Free Software community.  This functionality is not yet included.
