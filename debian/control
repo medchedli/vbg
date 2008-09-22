@@ -2,10 +2,10 @@ Source: vrms
 Section: admin
 Priority: optional
 Maintainer: Debian vrms Maintainers <debian-vrms@lists.gag.com>
-Standards-Version: 3.7.3
+Standards-Version: 3.8.0
 Build-Depends: debhelper (>> 5)
-XS-Vcs-SVN: svn://svn.debian.org/vrms/
-XB-Homepage: http://vrms.alioth.debian.org/
+Vcs-SVN: svn://svn.debian.org/vrms/
+Homepage: http://vrms.alioth.debian.org/
 Uploaders: Bdale Garbee <bdale@gag.com>, Rogério Brito <rbrito@ime.usp.br>
 
 Package: vrms

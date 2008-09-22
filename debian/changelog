@@ -1,3 +1,13 @@
+vrms (1.15) UNRELEASED; urgency=low
+
+  [ Rogério Brito ]
+  * reasons/vrms: include "human-icon-theme" explanation.
+  * debian/control: update Standards-Version to 3.8.0. No changes required.
+  * debian/control: include proper Homepage: field.
+  * debian/control: include proper VCS field.
+
+ -- Rogério Brito <rbrito@ime.usp.br>  Mon, 22 Sep 2008 07:24:26 -0300
+
 vrms (1.14) unstable; urgency=low
 
   [ Bdale Garbee ]
