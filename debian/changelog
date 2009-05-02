@@ -2,9 +2,21 @@ vrms (1.15) UNRELEASED; urgency=low
 
   [ Rogério Brito ]
   * reasons/vrms: include "human-icon-theme" explanation.
-  * debian/control: update Standards-Version to 3.8.0. No changes required.
-  * debian/control: include proper Homepage: field.
-  * debian/control: include proper VCS field.
+  * debian/control:
+    + update Standards-Version to 3.8.1. No changes required.
+    + include proper Homepage: field.
+    + include proper VCS field.
+    + include misc:Depends to the Depends: field of the binary package.
+    + include versioned Build-Depends: on debhelper.
+  * debian/copyright:
+    + fix reference to the GPL file, versioning it.
+    + update the years of copyright.
+    + update my e-mail address.
+  * debian/rules:
+    + change deprecated dh_clean -k call to dh_prep.
+    + make more extensive use of debhelper:
+      - use dh_install for the files.
+      - use dh_fixperms to fix the file permissions.
 
  -- Rogério Brito <rbrito@ime.usp.br>  Mon, 22 Sep 2008 07:24:26 -0300
 

@@ -1,10 +1,15 @@
-This program was written specifically for Debian by Bill Geddes and Bdale
-Garbee in January of 1999.  The effort resulted from a series of discussions
-with Richard M. Stallman about the problem posed by the existence of the
-non-free tree on many Debian FTP sites to users who wish to run a system of
-entirely Free Software.  The goal is to make it easy for a Debian user to
-know what non-free software is currently installed on their system so that
-they can make conscious decisions about what software to use.
+This program was written specifically for Debian by Bill Geddes and
+Bdale Garbee in January of 1999.
+
+The effort resulted from a series of discussions with Richard
+M. Stallman about the problem posed by the existence of the non-free
+tree on many Debian FTP sites to users who wish to run a system of
+entirely Free Software.  The goal is to make it easy for a Debian user
+to know what non-free software is currently installed on their system so
+that they can make conscious decisions about what software to use.
+
+Presently, vrms also shows the user if any packages from the contrib
+section is used.
 
 Things that are on our wish list:
 
@@ -22,3 +27,6 @@ Things that are on our wish list:
 Feel free to let us know if you have any other good ideas!  The best way to do
 so would be to file a wishlist bug against package 'vrms' in the Debian Bug 
 Tracking System.
+
+Contributions in form of code are also accepted, if you prefer to give a
+prototype of a feature that you would like vrms to have.

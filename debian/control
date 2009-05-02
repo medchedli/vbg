@@ -2,14 +2,15 @@ Source: vrms
 Section: admin
 Priority: optional
 Maintainer: Debian vrms Maintainers <debian-vrms@lists.gag.com>
-Standards-Version: 3.8.0
-Build-Depends: debhelper (>> 5)
+Standards-Version: 3.8.1
+Build-Depends: debhelper (>= 7)
 Vcs-SVN: svn://svn.debian.org/vrms/
 Homepage: http://vrms.alioth.debian.org/
 Uploaders: Bdale Garbee <bdale@gag.com>, Rogério Brito <rbrito@ime.usp.br>
 
 Package: vrms
 Architecture: all
+Depends: ${misc:Depends}
 Description: virtual Richard M. Stallman
  The vrms program will analyze the set of currently-installed packages
  on a Debian-based system, and report all of the packages from the
