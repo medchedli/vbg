@@ -17,8 +17,10 @@ vrms (1.15) UNRELEASED; urgency=low
     + make more extensive use of debhelper:
       - use dh_install for the files.
       - use dh_fixperms to fix the file permissions.
+  * reasons/vrms: remove tango-icon-theme, which is now in public
+    domain (see http://tango.freedesktop.org/Tango_Desktop_Project).
 
- -- Rogério Brito <rbrito@ime.usp.br>  Mon, 22 Sep 2008 07:24:26 -0300
+ -- Rogério Brito <rbrito@ime.usp.br>  Sun, 17 May 2009 00:19:58 -0300
 
 vrms (1.14) unstable; urgency=low
 
