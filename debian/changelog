@@ -1,4 +1,4 @@
-vrms (1.15) UNRELEASED; urgency=low
+vrms (1.15) unstable; urgency=low
 
   [ Rogério Brito ]
   * reasons/vrms: include "human-icon-theme" explanation.
@@ -22,7 +22,11 @@ vrms (1.15) UNRELEASED; urgency=low
       domain (see http://tango.freedesktop.org/Tango_Desktop_Project).
     + remove bender (Fix "Blender is free") (Closes: #525377).
 
- -- Rogério Brito <rbrito@ime.usp.br>  Mon, 18 May 2009 18:40:03 -0300
+  [ Bdale Garbee ]
+  * debian/control:
+    + include "DM-U-A" field set to yes.
+
+ -- Rogério Brito <rbrito@ime.usp.br>  Tue, 19 May 2009 02:35:46 -0300
 
 vrms (1.14) unstable; urgency=low
 
