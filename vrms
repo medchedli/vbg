@@ -167,7 +167,7 @@ while(<PKG_SOURCE>) {
 		($label, $section) = split(/:\s+/,$_,2);
 		print "\tsection=[$section]\n" if $debug >= 1;
 		$has_section = 1;	###  we have necessary section
-		if ($section =~ /contrib|non-free|restricted|multiverse/) {
+		if ($section =~ /contrib|non-free|restricted|multiverse|partner/) {
 		    ###  read thru rest of array to find descr instead of waiting for it
 		    my $found_descr =0;
 		    while (! $found_descr) {
