@@ -3,7 +3,7 @@ Section: admin
 Priority: optional
 Maintainer: Debian vrms Maintainers <vrms-devel@lists.alioth.debian.org>
 Standards-Version: 3.9.2
-Build-Depends: debhelper (>= 7)
+Build-Depends: debhelper (>= 8)
 Vcs-Git: git://anonscm.debian.org/vrms/vrms.git
 Vcs-Browser: http://alioth.debian.org/scm/browser.php?group_id=30771
 Homepage: http://vrms.alioth.debian.org/
