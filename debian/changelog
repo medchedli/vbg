@@ -1,4 +1,4 @@
-vrms (1.16) UNRELEASED; urgency=low
+vrms (1.16) unstable; urgency=low
 
   [ Rogério Brito ]
   * vrms:
@@ -7,6 +7,7 @@ vrms (1.16) UNRELEASED; urgency=low
   [ Bdale Garbee ]
   * debian/control:
     + update maintainer address, standards version, VCS fields
+    + change debhelper build-dep to require version 8 or later
   * debian/rules, debian/compat:
     + switch to using debhelper 8 dh
 
