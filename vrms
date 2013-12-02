@@ -100,10 +100,10 @@ closedir REASONDIR or
     die "Can't close DIR [$reasondir]: $!\n";
 
 my $statusfile = '/var/lib/dpkg/status';
-my $is_nonproprietary = 0;		###  preset none found, yet
-my %nonproprietary = ();
-my $is_other_nonproprietary = 0;	###  preset none found, yet
-my %other_nonproprietary = ();
+my $is_free = 0;		###  preset none found, yet
+my %free = ();
+my $is_other_free = 0;	###  preset none found, yet
+my %other_free = ();
 my $is_contrib = 0;		###  preset none found, yet
 my %contrib = ();
 my $is_other_contrib = 0;	###  preset none found, yet
@@ -167,7 +167,11 @@ while(<PKG_SOURCE>) {
 				($label, $section) = split(/:\s+/,$_,2);
 				print "\tsection=[$section]\n" if $debug >= 1;
 				$has_section = 1;	###  we have necessary section
+				#if the software is in some way proprietary
 				if ($section =~ /contrib|non-free|restricted|multiverse|partner/) {
+					
+				#non-proprietary softwares
+				}else{
 					###  read thru rest of array to find descr instead of waiting for it
 					my $found_descr =0;
 					while (! $found_descr) {
@@ -183,23 +187,13 @@ while(<PKG_SOURCE>) {
 							$found_descr = 1;
 						}
 					}
-					if ($section =~ /contrib/) {
-						if (lc $status eq 'installed') {
-							$is_contrib = 1;
-							$contrib{$pkg} = $shortdescr;
-						} else {
-							$is_other_contrib = 1;
-							$other_contrib{$pkg} = $shortdescr;
-						}
+					if (lc $status eq 'installed') {
+						$is_free = 1;
+						$free{$pkg} = $shortdescr;
 					} else {
-						if (lc $status eq 'installed') {
-							$is_nonproprietary = 1;
-							$nonproprietary{$pkg} = $shortdescr;
-						} else {
-							$is_other_nonproprietary = 1;
-							$other_nonproprietary{$pkg} = $shortdescr;
-						}
-					}
+						$is_other_free = 1;
+						$other_free{$pkg} = $shortdescr;
+					}					
 				}
 			last;	### this is last desriptor of package we care about so end loop
 			} else {
@@ -234,19 +228,19 @@ close (PKG_SOURCE) or
 my $nfcnt = 0;
 my $pkgname = "";
 
-my $nonproprietarycnt = (keys %nonproprietary);
+my $freecnt = (keys %free);
 
-if($is_nonproprietary) {
+if($is_free) {
     if($sparse) {
-		foreach $pkgname (sort keys (%nonproprietary)) {
+		foreach $pkgname (sort keys (%free)) {
 			$nfcnt++;
 			print "$pkgname\n";
 		}
     } else {
-		$~ = "nonproprietary_head";
+		$~ = "free_head";
 		write ;
 		$~ = "nfp";
-		foreach $pkgname (sort keys(%nonproprietary) ) {
+		foreach $pkgname (sort keys(%free) ) {
 			$nfcnt++;
 			write ;
 			print "  Reason: $reason{$pkgname}\n"
@@ -256,18 +250,18 @@ if($is_nonproprietary) {
 }
 
 my $pnfcnt = 0;
-my $other_nonproprietarycnt = (keys %other_nonproprietary);
-if($is_other_nonproprietary) {
+my $other_freecnt = (keys %other_free);
+if($is_other_free) {
     if($sparse) {
-		foreach $pkgname (sort keys(%other_nonproprietary)) {
+		foreach $pkgname (sort keys(%other_free)) {
 			$pnfcnt++;
 			print "$pkgname\n";
 		}
     } else {
-		$~ = "nonproprietary_partialhead";
+		$~ = "free_partialhead";
 		write;
 		$~ = "pnf";
-		foreach $pkgname (sort keys(%other_nonproprietary)) {
+		foreach $pkgname (sort keys(%other_free)) {
 			$pnfcnt++;
 			write;
 			print "  Reason: $reason{$pkgname}\n"
@@ -324,11 +318,11 @@ if($is_other_contrib) {
 if (!$quiet and !$sparse) {
     printf "\n";
     if ($nfcnt != 0 or $pnfcnt != 0) {
-		my $total_nonproprietary = $nonproprietarycnt + $other_nonproprietarycnt;
+		my $total_free = $freecnt + $other_freecnt;
 		my $total_installed = $pkgcnt;
-		my $percentage = $total_nonproprietary * 100 / $total_installed;
+		my $percentage = $total_free * 100 / $total_installed;
 		printf "  %d non-free packages, %2.1f%% of %d installed packages.\n", 
-		$total_nonproprietary, $percentage, $total_installed;
+		$total_free, $percentage, $total_installed;
     }
     if ($cbcnt != 0 or $pcbcnt != 0) {
 		my $total_contrib = $contribcnt + $other_contribcnt;
@@ -343,12 +337,12 @@ if (!$quiet and $nfcnt == 0 and $pnfcnt == 0 and $cbcnt == 0 and $pcbcnt == 0) {
 }
 
 
-format nonproprietary_head =
+format free_head =
 @||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 "Non-free packages installed on $sysname"
 
 .
-format nonproprietary_partialhead =
+format free_partialhead =
 
 @||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 "Non-free packages with status other than installed on $sysname"
@@ -369,12 +363,12 @@ format contrib_partialhead =
 
 format nfp =
 @<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< @<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-$pkgname, $nonproprietary{$pkgname}
+$pkgname, $free{$pkgname}
 .
 
 format pnf =
 @<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< @<@<<@< @<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-$pkgname, '(', $pkg_status{$pkgname},')', $other_nonproprietary{$pkgname}
+$pkgname, '(', $pkg_status{$pkgname},')', $other_free{$pkgname}
 .
 
 format cbp =
