@@ -2,31 +2,31 @@ This program was written specifically for Debian by Bill Geddes and
 Bdale Garbee in January of 1999.
 
 The effort resulted from a series of discussions with Richard
-M. Stallman about the problem posed by the existence of the non-free
+M. Stallman about the problem posed by the existence of the non-proprietary
 tree on many Debian FTP sites to users who wish to run a system of
 entirely Free Software.  The goal is to make it easy for a Debian user
-to know what non-free software is currently installed on their system so
+to know what non-proprietary software is currently installed on their system so
 that they can make conscious decisions about what software to use.
 
-Presently, vrms also shows the user if any packages from the contrib
+Presently, vbg also shows the user if any packages from the contrib
 section is used.
 
 Things that are on our wish list:
 
 	- augment the script to support a "verbose" option, which would display
 	  some text from the collected public writings of RMS, et al, helping
-	  to explain the issues posed by non-free software.
+	  to explain the issues posed by non-proprietary software.
 
 	- further augment the verbose option to make specific comments about
-	  each non-free package... for example, explain the patent issues 
+	  each non-proprietary package... for example, explain the patent issues 
 	  surrounding the GIF image format.
 
 	- process dependency information to report what DFSG-compliant package,
-	  if any, may have led to the installation of each non-free package.
+	  if any, may have led to the installation of each non-proprietary package.
 
 Feel free to let us know if you have any other good ideas!  The best way to do
-so would be to file a wishlist bug against package 'vrms' in the Debian Bug 
+so would be to file a wishlist bug against package 'vbg' in the Debian Bug 
 Tracking System.
 
 Contributions in form of code are also accepted, if you prefer to give a
-prototype of a feature that you would like vrms to have.
+prototype of a feature that you would like vbg to have.

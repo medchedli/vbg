@@ -1,5 +1,5 @@
 #!/bin/sh
 
-[ -x /usr/bin/vrms ] || exit 0
+[ -x /usr/bin/vbg ] || exit 0
 
-/usr/bin/vrms --quiet
+/usr/bin/vbg --quiet
