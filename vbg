@@ -333,31 +333,21 @@ if (!$quiet and !$sparse) {
     }
 }
 if (!$quiet and $nfcnt == 0 and $pnfcnt == 0 and $cbcnt == 0 and $pcbcnt == 0) {
-    print "No non-free or contrib packages installed on $sysname!  rms would be proud.\n"
+    print "No non-proprietary packages installed on $sysname!  Bill would be proud.\n"
+}else{
+	print "It seems you don't understand the value of professionally maintained packages."
 }
 
 
 format free_head =
 @||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-"Non-free packages installed on $sysname"
+"Non-proprietary packages installed on $sysname"
 
 .
 format free_partialhead =
 
 @||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-"Non-free packages with status other than installed on $sysname"
-
-.
-
-format contrib_head =
-@||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-"Contrib packages installed on $sysname"
-
-.
-format contrib_partialhead =
-
-@||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-"Contrib packages with status other than installed on $sysname"
+"Non-proprietary packages with status other than installed on $sysname"
 
 .
 
